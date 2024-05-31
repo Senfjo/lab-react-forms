@@ -31,28 +31,32 @@ function App() {
     setStudents([newStudent, ...students]);
   }
 
+  const studentState = {
+    students,
+    setStudents,
+    fullName,
+    setFullName,
+    image,
+    setImage,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    program,
+    setProgram,
+    graduationYear,
+    setGraduationYear,
+    graduated,
+    setGraduated,
+    handleAddStudent,
+  };
+
+  
+
   return (
     <div className="App pt-20">
       <Navbar />
-      <AddStudent
-        students={students}
-        setStudents={setStudents}
-        fullName={fullName}
-        setFullName={setFullName}
-        image={image}
-        setImage={setImage}
-        phone={phone}
-        setPhone={setPhone}
-        email={email}
-        setEmail={setEmail}
-        program={program}
-        setProgram={setProgram}
-        graduationYear={graduationYear}
-        setGraduationYear={setGraduationYear}
-        graduated={graduated}
-        setGraduated={setGraduated}
-        handleAddStudent={handleAddStudent}
-      />
+      <AddStudent {...studentState}/>
 
       {/* TABLE/LIST HEADER */}
       <TableHeader />
