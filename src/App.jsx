@@ -17,20 +17,6 @@ function App() {
   const [graduationYear, setGraduationYear] = useState(2024);
   const [graduated, setGraduated] = useState(false);
 
-  function handleAddStudent(event) {
-    event.preventDefault();
-    const newStudent = {
-      fullName,
-      email,
-      phone,
-      program,
-      image,
-      graduationYear,
-      graduated,
-    };
-    setStudents([newStudent, ...students]);
-  }
-
   const studentState = {
     students,
     setStudents,
@@ -51,12 +37,32 @@ function App() {
     handleAddStudent,
   };
 
-  
+  function handleAddStudent(event) {
+    event.preventDefault();
+    const newStudent = {
+      fullName,
+      email,
+      phone,
+      program,
+      image,
+      graduationYear,
+      graduated,
+    };
+    setStudents([newStudent, ...students]);
+
+    setFullName("");
+    setImage("");
+    setPhone("");
+    setEmail("");
+    setProgram("-- None --");
+    setGraduationYear(2024);
+    setGraduated(false);
+  }
 
   return (
     <div className="App pt-20">
       <Navbar />
-      <AddStudent {...studentState}/>
+      <AddStudent {...studentState} />
 
       {/* TABLE/LIST HEADER */}
       <TableHeader />

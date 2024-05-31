@@ -1,7 +1,4 @@
 const AddStudent = (props) => {
-
-
-
   return (
     <div>
       <form onSubmit={props.handleAddStudent}>
